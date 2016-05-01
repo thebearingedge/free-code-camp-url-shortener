@@ -6,7 +6,12 @@
   "main": "index.js",
   "scripts": {
     "babel": "rimraf dist && babel src -d dist",
-    "start": "node dist"
+    "start": "node dist",
+    "knex": "babel-node node_modules/.bin/knex --",
+    "db:make": "npm run -s knex migrate:make --",
+    "db:up": "npm run -s knex migrate:latest",
+    "db:down": "npm run -s knex migrate:rollback",
+    "db:cycle": "npm run -s db:down && npm run -s db:up"
   },
   "repository": {
     "type": "git",
@@ -26,6 +31,8 @@
     "rimraf": "2.5.2"
   },
   "dependencies": {
-    "express": "4.13.4"
+    "express": "4.13.4",
+    "knex": "0.10.0",
+    "pg": "4.5.5"
   }
 }
