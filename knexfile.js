@@ -1,9 +1,8 @@
 
-export const development = {
-  client: 'postgresql',
-  connection: {
-    user: 'url-shortener',
-    password: 'url-shortener',
-    database: 'url-shortener'
-  }
-}
+import * as connections from './src/config'
+
+
+export const development = connections.development
+
+
+export const production = connections.production

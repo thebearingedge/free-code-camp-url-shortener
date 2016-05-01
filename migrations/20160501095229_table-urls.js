@@ -3,11 +3,8 @@ export const up = ({ schema }) =>
 
   schema
     .createTable('urls', tb => {
-      tb.string('long_url')
-        .unique()
-        .notNullable()
-      tb.string('short_url')
-        .unique()
+      tb.increments('id')
+      tb.string('url')
         .notNullable()
     })
 
