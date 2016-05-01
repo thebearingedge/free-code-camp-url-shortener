@@ -25,14 +25,14 @@ app.get('/', (req, res) =>
         <body>
           <h1>URL Shortener</h1>
           <h4>Example Creation</h4>
-          <pre>${hostname}/new/https://wikipedia.com</pre>
+          <pre>${hostname}/new/https://www.wikipedia.org</pre>
           <h4>Example Output</h4>
-          <pre>{ "original_url": "https://wikipedia.com", "shortened_url": "${hostname}/e" }
+          <pre>{ "original_url": "https://www.wikipedia.org", "shortened_url": "${hostname}/e" }
           </pre>
           <h4>Usage</h4>
           <pre>${hostname}/e</pre>
           <h4>Redirects To</h4>
-          <pre>https://wikipedia.com</pre>
+          <pre>https://www.wikipedia.org</pre>
         </body>
       </html>
     `)
