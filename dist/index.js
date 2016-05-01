@@ -22,7 +22,7 @@ var hostname = process.env.NODE_ENV === 'production' ? 'https://intense-reaches-
 var app = (0, _express2.default)();
 
 app.get('/', function (req, res) {
-  return res.send('hello app');
+  return res.send('\n      <html>\n        <head>\n          <title>URL Shortener</title>\n          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"/>\n        </head>\n        <body>\n          <h1>URL Shortener</h1>\n          <h4>Example Creation</h4>\n          <pre>' + hostname + '/new/https://wikipedia.com</pre>\n          <h4>Example Output</h4>\n          <pre>{ "original_url": "https://wikipedia.com", "shortened_url": "' + hostname + '/e" }\n          </pre>\n          <h4>Usage</h4>\n          <pre>' + hostname + '/e</pre>\n          <h4>Redirects To</h4>\n          <pre>https://wikipedia.com</pre>\n        </body>\n      </html>\n    ');
 });
 
 app.get('/new/*', function (_ref, res) {

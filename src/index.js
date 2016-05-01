@@ -14,7 +14,30 @@ const hostname = process.env.NODE_ENV === 'production'
 const app = express()
 
 
-app.get('/', (req, res) => res.send('hello app'))
+app.get('/', (req, res) =>
+
+    res.send(`
+      <html>
+        <head>
+          <title>URL Shortener</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"/>
+        </head>
+        <body>
+          <h1>URL Shortener</h1>
+          <h4>Example Creation</h4>
+          <pre>${hostname}/new/https://wikipedia.com</pre>
+          <h4>Example Output</h4>
+          <pre>{ "original_url": "https://wikipedia.com", "shortened_url": "${hostname}/e" }
+          </pre>
+          <h4>Usage</h4>
+          <pre>${hostname}/e</pre>
+          <h4>Redirects To</h4>
+          <pre>https://wikipedia.com</pre>
+        </body>
+      </html>
+    `)
+
+  )
 
 
 app.get('/new/*', ({ params }, res) => {
